@@ -1,0 +1,22 @@
+ <div style="text-align:center;">
+
+	<p id="notice"><%= notice %></p>
+      <p>
+      	Notes
+      </p>
+	<p>
+	  <strong>name:</strong>
+	  <%= @note.name %>
+	</p>
+
+	<p>
+	  <strong>description:</strong>
+	  <%= @note.description %>
+	</p>
+
+
+
+<%= link_to 'Edit', edit_note_path(@note), class:'btn btn-mini btn-dark' %> |
+<%= link_to 'list of notes', notes_path, class:'btn btn-mini btn-info' %>|
+<%= link_to 'New Notes', new_note_path, class:'btn btn-mini btn-warning' %>
+</div>
