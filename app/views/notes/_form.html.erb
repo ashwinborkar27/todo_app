@@ -7,6 +7,20 @@
     <%= f.input :description %>
   </div>
 
+
+ <!--  <%#= f.label :selector %><br>
+  <div class="form-group">
+  <%#= f.select :selector, ['task', 'report', 'personal']%>
+</div> -->
+
+  <div>
+    <select class="form-control status" name="selector" style="width:100%">
+      <option value="report" id="report">Report</option>
+      <option value="task" id="task">Task</option>
+      <option value="personal" id="personal">Personal</option>
+    </select>
+  </div>
+
   <div class="form-actions">
     <%= f.button :submit ,class:'btn btn-mini btn-warning'%>
   </div>
