@@ -7,7 +7,6 @@
     <%= f.input :description %>
   </div>
 
-
  <!--  <%#= f.label :selector %><br>
   <div class="form-group">
   <%#= f.select :selector, ['task', 'report', 'personal']%>
@@ -19,7 +18,19 @@
       <option value="task" id="task">Task</option>
       <option value="personal" id="personal">Personal</option>
     </select>
+  </div> <br><br><hr>
+
+  <%#= f.collection_select :category_id, provide.order(:name),:id,:name, include_blank: true %>
+  <%#= f.select :category_id, %>
+  <%= link_to 'New Category', new_category_path,class:'btn btn-mini btn-info' %>
+  
+ 
+  <div>
+    <label>Catgory Type</label>
+    <%= select_tag "category_id", options_from_collection_for_select(current_user.categories, "id", "name") , class: "form-control"%>
   </div>
+  
+
 
   <div class="form-actions">
     <%= f.button :submit ,class:'btn btn-mini btn-warning'%>

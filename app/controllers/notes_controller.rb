@@ -16,6 +16,7 @@ class NotesController < ApplicationController
     @note_personal_lists = current_user.notes.personal
   end
 
+
   def show
     
   end
@@ -31,11 +32,10 @@ class NotesController < ApplicationController
   def create
      @note = Note.new(note_params)
     @note.user_id = current_user.id
+    @note.category_id = params[:category_id]
     @note.selector = params[:selector]
-    # raise @note.selector.inspect
     # raise @note.inspect
-    # raise abc.inspect
-    # raise  @note.inspect
+
     respond_to do |format|
       if @note.save
         format.html { redirect_to @note, notice: "Notes was successfully created." }
@@ -50,7 +50,10 @@ class NotesController < ApplicationController
 
   def update
     respond_to do |format|
+        @note.category_id = params[:category_id]
+        @note.selector = params[:selector]
       if @note.update(note_params)
+    #raise @note.selector.inspect
         format.html { redirect_to @note, notice: "Notes was successfully updated." }
         format.json { render :show, status: :ok, location: @note }
       else
@@ -74,7 +77,7 @@ class NotesController < ApplicationController
      @note = Note.find(params[:id])
   end
   def note_params
-  	params.require(:note).permit(:name, :description, :user_id, :selector)
+  	params.require(:note).permit(:name, :description, :user_id, :selector, :category_id)
   end
 end
 

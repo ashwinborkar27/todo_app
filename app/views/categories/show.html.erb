@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @category.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category), class:'btn btn-mini btn-primary' %> |
+<%= link_to 'Back', categories_path,class:'btn btn-mini btn-dark' %>|
+<%= link_to 'New Notes', new_note_path, class:'btn btn-mini btn-warning' %>|
+

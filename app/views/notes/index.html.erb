@@ -15,7 +15,8 @@
       <th>Name</th>
       <th>Description</th>
       <th>User</th>
-      <th>Selector</th>
+     <th>Selector</th> 
+      <th>Category Type</th>
       <th colspan="8" style ="padding-left: 266px"> Action</th>
     </tr>
   </thead>
@@ -28,7 +29,8 @@
         <td><%= note.name %></td>
         <td><%= note.description %></td>
         <td><%= note.user_id %></td>
-        <td><%= note.selector %></td>
+        <td><%= note.selector %></td> 
+        <td><%= Category.find(note.category_id).name %></td>
         <%#= note.input :selector, collection: enum_collection_for_select(note.selector), selected: @user.selector %>
         <td><%#= link_to 'report' , notes_report_list_path, class:'btn btn-mini btn-info'%></td>
         <td><%#= link_to 'task', notes_task_list_path, class:'btn btn-mini btn-info'%></td>
