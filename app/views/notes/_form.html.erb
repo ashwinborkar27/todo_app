@@ -7,32 +7,47 @@
     <%= f.input :description %>
   </div>
 
- <!--  <%#= f.label :selector %><br>
-  <div class="form-group">
-  <%#= f.select :selector, ['task', 'report', 'personal']%>
-</div> -->
+  <!-- div class="form-inputs">
+    <label for="fname">Api_id Type:</label>
+    <%# @user_data.each do |user_data|%>
+       <input type="text"  name="user_data" value="<%#= user_data['id'] %>" multiple="">  
+    <%# end %>
+  </div> -->
 
   <div>
+    <label>Api id Type</label>
+    <%= f.text_field :title, :class => "form-control" , :precision => 2, :delimiter => ',', multiple: true%>          
+  </div>
+
+  <%#= raise @user_data.:idinspect %>
+  <!-- <div>
+    <label>Api id Type</label>
+    <select class="form-control" name="user_data" >
+      <%# @user_data.each do |user_data|%>
+        <option value="<%#= user_data['id']%>"><%#= user_data['id']%></option>
+      <%# end %>
+    </select>
+  </div> <hr>  -->
+   <%#= raise user_hash.inspect  %>
+  <div>
+    <label>selector Type</label>
     <select class="form-control status" name="selector" style="width:100%">
       <option value="report" id="report">Report</option>
       <option value="task" id="task">Task</option>
       <option value="personal" id="personal">Personal</option>
     </select>
-  </div> <br><br><hr>
-
-  <%#= f.collection_select :category_id, provide.order(:name),:id,:name, include_blank: true %>
-  <%#= f.select :category_id, %>
-  <%= link_to 'New Category', new_category_path,class:'btn btn-mini btn-info' %>
+  </div> <br><br><hr> 
+  
   
  
   <div>
     <label>Catgory Type</label>
     <%= select_tag "category_id", options_from_collection_for_select(current_user.categories, "id", "name") , class: "form-control"%>
-  </div>
-  
+  </div><br><br><hr> 
 
 
   <div class="form-actions">
-    <%= f.button :submit ,class:'btn btn-mini btn-warning'%>
-  </div>
+    <%= f.button :submit ,class:'btn btn-mini btn-warning'%>|<%= link_to 'New Category', new_category_path,class:'btn btn-mini btn-info' %>
+  </div><br><hr> 
 <% end %>
+

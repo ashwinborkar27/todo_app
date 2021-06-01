@@ -3,3 +3,5 @@ class AddSelectorToNotes < ActiveRecord::Migration[6.1]
   	add_column :notes, :selector, :string
   end
 end
+
+
